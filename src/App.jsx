@@ -1,4 +1,5 @@
 import "./App.css";
+import instance from "./axios/config";
 
 import { useState, useEffect } from "react";
 
@@ -9,40 +10,36 @@ function App() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  const fetchData = async () => {
-    const res = await fetch(url);
-
-    const data = await res.json();
-
-    setProducts(data);
+  const getItens = async () => {
+    try {
+      const res = await instance.get("/products");
+      const data = res.data;
+      setProducts(data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {
-    fetchData();
+    getItens();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const product = {
-      name,
-      price,
-    };
+    const itens = { name, price };
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    try {
+      const res = await instance.post("/products", {
+        ...itens,
+      });
 
-    const addedProducts = await res.json();
-
-    setProducts((prev) => [...prev, addedProducts]);
-
-    setName("");
-    setPrice("");
+      products.push(itens);
+      setName("");
+      setPrice("");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (

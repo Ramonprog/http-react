@@ -19,6 +19,21 @@
       "name": "Bermuda rasgada",
       "price": "120",
       "id": 4
+    },
+    {
+      "name": "calça",
+      "price": "1",
+      "id": 5
+    },
+    {
+      "name": "alisson",
+      "price": "1",
+      "id": 6
+    },
+    {
+      "name": "alisson",
+      "price": "3",
+      "id": 7
     }
   ]
 }
