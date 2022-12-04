@@ -14,6 +14,11 @@
       "id": 3,
       "name": "Boné aba reta",
       "price": 29.9
+    },
+    {
+      "name": "Bermuda rasgada",
+      "price": "120",
+      "id": 4
     }
   ]
 }
