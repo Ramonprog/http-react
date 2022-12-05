@@ -1,39 +1,29 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Camisa",
-      "price": 59.9
+      "name": "alisson",
+      "price": "1",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Calça vermelha",
-      "price": 90
+      "name": "ramon",
+      "price": "1",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Boné aba reta",
-      "price": 29.9
+      "name": "alisson",
+      "price": "2",
+      "id": 3
     },
     {
-      "name": "Bermuda rasgada",
-      "price": "120",
+      "name": "alisson",
+      "price": "2",
       "id": 4
     },
     {
-      "name": "calça",
-      "price": "1",
+      "name": "alisson",
+      "price": "2",
       "id": 5
-    },
-    {
-      "name": "alisson",
-      "price": "1",
-      "id": 6
-    },
-    {
-      "name": "alisson",
-      "price": "3",
-      "id": 7
     }
   ]
 }

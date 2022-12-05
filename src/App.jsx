@@ -3,8 +3,6 @@ import instance from "./axios/config";
 
 import { useState, useEffect } from "react";
 
-const url = "http://localhost:3000/products";
-
 function App() {
   const [products, setProducts] = useState([]);
   const [name, setName] = useState("");
@@ -41,6 +39,10 @@ function App() {
       console.log(error.message);
     }
   };
+  const handleDelete = async (item) => {
+    const res = await instance.delete(`/products/${item.id}`);
+    getItens();
+  };
 
   return (
     <div className="App">
@@ -48,7 +50,8 @@ function App() {
       <ul>
         {products.map((item) => (
           <li key={item.id}>
-            {item.name} - {item.price}
+            {item.name} - {item.price}{" "}
+            <button onClick={() => handleDelete(item)}>delet</button>
           </li>
         ))}
       </ul>
